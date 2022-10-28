@@ -1,0 +1,43 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    compileSdk appCompile
+
+    defaultConfig {
+        minSdk appMinSdk
+        targetSdk appTargetSdk
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    api uiDependency.values()
+    api junitTestImplementation.values()
+    api extJunitTest.values()
+    api espressoCore.values()
+    api networkDependency.values()
+    api liveDataVMDependencies.values()
+    api koinDependencies.values()
+    api navigationDependencies.values()
+    api coroutineDependencies.values()
+}
