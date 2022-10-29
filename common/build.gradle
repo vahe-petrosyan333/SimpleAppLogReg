@@ -1,6 +1,7 @@
 plugins {
-    id 'com.android.library'
-    id 'org.jetbrains.kotlin.android'
+    id "com.android.library"
+    id 'kotlin-android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -21,12 +22,13 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '11'
     }
+    buildToolsVersion '30.0.3'
 }
 
 dependencies {
@@ -40,4 +42,5 @@ dependencies {
     api koinDependencies.values()
     api navigationDependencies.values()
     api coroutineDependencies.values()
+    api roomDependencies.values()
 }

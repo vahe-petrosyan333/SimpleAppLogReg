@@ -1,7 +1,7 @@
 ext {
     appMinSdk = 25
-    appTargetSdk = 32
-    appCompile = 32
+    appTargetSdk = 33
+    appCompile = 33
 
     // junit test
     junitTestImplementation = [
@@ -17,10 +17,12 @@ ext {
     ]
     //Ui dependency
     uiDependency = [
+            vorkKtx         : 'androidx.work:work-runtime-ktx:2.7.0',
             coreKtx         : 'androidx.core:core-ktx:1.9.0',
             appcompat       : 'androidx.appcompat:appcompat:1.5.1',
             material        : 'com.google.android.material:material:1.7.0',
-            constraintLayout: 'androidx.constraintlayout:constraintlayout:2.1.4'
+            constraintLayout: 'androidx.constraintlayout:constraintlayout:2.1.4',
+            googleGuava     : 'com.google.guava:guava:27.0.1-android'
     ]
     // Net dependency
     retrofitVersion = '2.9.0'
@@ -62,5 +64,12 @@ ext {
     coroutineDependencies = [
             kotlinxCoroutinesAndroid: "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlinCoroutineVersion",
             kotlinxCoroutinesCore   : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinCoroutineVersion",
+    ]
+    //Room components
+    roomDependencies = [
+            roomRunTime : 'androidx.room:room-runtime:2.2.5',
+            roomCompiler: 'androidx.room:room-compiler:2.2.5',
+            roomKtx     : 'androidx.room:room-ktx:2.2.5',
+            roomCoroutines : 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.0.0'
     ]
 }
