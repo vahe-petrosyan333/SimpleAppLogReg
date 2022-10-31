@@ -70,6 +70,6 @@ ext {
             roomRunTime : 'androidx.room:room-runtime:2.2.5',
             roomCompiler: 'androidx.room:room-compiler:2.2.5',
             roomKtx     : 'androidx.room:room-ktx:2.2.5',
-            roomCoroutines : 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.0.0'
+            roomTesting : 'androidx.room:room-testing:2.4.3'
     ]
 }

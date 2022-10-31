@@ -4,16 +4,64 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".LoginFragment">
+    tools:context=".view.LoginFragment">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <com.example.simpleapplogreg.view.validatorEditText.CustomTextInputLayout
+        android:id="@+id/email_input_layout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        >
+
+        <com.example.simpleapplogreg.view.validatorEditText.CustomEditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:hint="Email"
+            app:layoutId="@+id/email_input_layout"
+            app:regexErrorText="@string/email_regex"
+            app:validateWithRegex="@string/email_regex" />
+    </com.example.simpleapplogreg.view.validatorEditText.CustomTextInputLayout>
+
+    <com.example.simpleapplogreg.view.validatorEditText.CustomTextInputLayout
+        android:id="@+id/pass_input_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/email_input_layout" >
+
+        <com.example.simpleapplogreg.view.validatorEditText.CustomEditText
+            android:id="@+id/pass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:hint="Password"
+            app:layoutId="@+id/email_input_layout"
+            app:regexErrorText="@string/empty_error_text"
+            app:validateWithRegex="@string/empty_error_text" />
+    </com.example.simpleapplogreg.view.validatorEditText.CustomTextInputLayout>
+
+
+    <Button
+        android:id= "@id/login"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/pass_input_layout"
+        app:layout_constraintLeft_toLeftOf="@id/pass_input_layout"
+        app:layout_constraintRight_toRightOf="@id/pass_input_layout"
+        android:textAllCaps="false"
         android:text="@string/login"
-        android:textColor="#000000"
-        android:layout_marginTop="5dp"/>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
